@@ -32,7 +32,7 @@ class CategoriesScreen extends React.Component {
       <View style={styles.detailView}>
           <TouchableOpacity
             style={styles.thumbnailImageContainer}
-            onPress={() => this.props.navigation.navigate('Products')}>
+            onPress={() => this.props.navigation.navigate('Products', { category: 0 })}>
             <Image
               style={styles.thumbnailImage}
               source={require('../images/womens.png')}
@@ -40,7 +40,7 @@ class CategoriesScreen extends React.Component {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.thumbnailImageContainer}
-            onPress={() => this.props.navigation.navigate('Products')}>
+            onPress={() => this.props.navigation.navigate('Products', { category: 1 })}>
             <Image
               style={styles.thumbnailImage}
               source={require('../images/mens.png')}
@@ -48,7 +48,7 @@ class CategoriesScreen extends React.Component {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.thumbnailImageContainer}
-            onPress={() => this.props.navigation.navigate('Products')}>
+            onPress={() => this.props.navigation.navigate('Products', { category: 2 })}>
             <Image
               style={styles.thumbnailImage}
               source={require('../images/kids.png')}
