@@ -36,7 +36,7 @@ export default class ProductListScreen extends React.Component {
           {data.price.regular.high > 0 ? (
             <View style={{ marginTop: 5 }}>
               <Text style={{ fontSize: 20, fontFamily: 'productSans-Regular' }}>
-                {`Price: ${data.price.regular.high}`}
+                {`Price: $${data.price.regular.high}`}
               </Text>
             </View>
           ) : null}
