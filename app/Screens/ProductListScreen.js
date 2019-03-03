@@ -18,7 +18,7 @@ export default class ProductListScreen extends React.Component {
           backgroundColor="#84fab0"
           leftComponent={
             <TouchableOpacity onPress={() => this.props.navigation.navigate('List')}>
-              <Icon name='arrow-left' type="feather" color="white" />
+              <Icon name='arrow-left'git type="feather" color="white" />
             </TouchableOpacity>
           }
         />
@@ -89,6 +89,7 @@ const styles = StyleSheet.create({
   productName: {
     fontSize: 30,
     fontWeight: "700",
+    fontFamily: 'productSans-Bold'
   },
   productBrand: {
     fontSize: 20,
