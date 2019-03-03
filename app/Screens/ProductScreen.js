@@ -10,15 +10,31 @@ import {
   SafeAreaView,
   FlatList
 } from 'react-native';
+import { Font, LinearGradient } from 'expo';
+
 import { CATEGORIES_DATA } from '../../utils/data';
 
 export default class ProductScreen extends React.Component {
+  static navigationOptions = {
+    header: null
+  };
   constructor(props) {
     super(props);
     const category = props.navigation.state.params && props.navigation.state.params.category;
     this.state = {
-      category: category
+      category: category,
+      fontLoaded: false
     };
+  }
+
+  async componentDidMount() {
+    await Font.loadAsync({
+      'productSans-Regular': require('../../assets/fonts/ProductSans-Regular.ttf'),
+      'productSans-Bold': require('../../assets/fonts/ProductSans-Bold.ttf')
+    });
+
+    this.setState({ fontLoaded: true });
+    console.log(this.state.fontLoaded);
   }
   _renderItem = ({ item }) => (
     <View style={styles.smallRow}>
@@ -39,16 +55,23 @@ export default class ProductScreen extends React.Component {
   render() {
     const { category } = this.state;
     return (
-      <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
-        <FlatList
-          data={CATEGORIES_DATA[category].child}
-          extraData={this.state}
-          keyExtractor={this._keyExtractor}
-          renderItem={this._renderItem}
-          columnWrapperStyle={styles.smallRow}
-          numColumns={2}
-        />
-      </SafeAreaView>
+      <View style={{ flex: 1, backgroundColor: '#fff', justifyContent: 'center' }}>
+        <LinearGradient colors={['#84fab0', '#8fd3f4']} style={styles.backgroundGradient}>
+          {this.state.fontLoaded ? (
+            <Text style={styles.header}>{CATEGORIES_DATA[category].name}</Text>
+          ) : null}
+        </LinearGradient>
+        <View style={styles.productListContainer}>
+          <FlatList
+            data={CATEGORIES_DATA[category].child}
+            extraData={this.state}
+            keyExtractor={this._keyExtractor}
+            renderItem={this._renderItem}
+            columnWrapperStyle={styles.smallRow}
+            numColumns={2}
+          />
+        </View>
+      </View>
     );
   }
 }
@@ -114,11 +137,25 @@ const styles = StyleSheet.create({
     height: 160,
     width: 160,
     borderRadius: 10
-
   },
 
   planningButton: {
     marginTop: 50,
     marginLeft: 30
+  },
+  backgroundGradient: {
+    flex: 1,
+    justifyContent: 'center',
+    paddingHorizontal: 27,
+    backgroundColor: 'red'
+  },
+  header: {
+    fontSize: 35,
+    fontWeight: '700',
+    fontFamily: 'productSans-Bold',
+    color: '#fff'
+  },
+  productListContainer: {
+    flex: 3
   }
 });
