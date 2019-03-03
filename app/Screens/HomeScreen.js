@@ -5,7 +5,7 @@ import * as actions from '../actions';
 import { Header } from 'react-native-elements';
 
 import SwipeCards from 'react-native-swipe-cards';
-import Cards from "../Components/Cards"
+import Cards from '../Components/Cards';
 // class Card extends React.Component {
 //   constructor(props) {
 //     super(props);
@@ -47,9 +47,14 @@ class HomeScreen extends React.Component {
   fetchProducts = () => {
     this.props.fetchStations(this.props.navigation.state.params.categories, () => {});
   };
+  saveThing(card) {
+    this.props.saveStation(card);
+  }
 
-  handleYup(card) {
-    console.log(`Yup for ${card.text}`);
+  handleYup() {
+    let temp;
+    temp = this.refs['swiper'].getCurrentCard();
+    this.saveThing(temp);
   }
   handleNope(card) {
     console.log(`Nope for ${card.text}`);
@@ -61,10 +66,11 @@ class HomeScreen extends React.Component {
   renderCards = data => {
     return (
       <SwipeCards
+        ref={'swiper'}
         cards={data}
         renderCard={cardData => <Cards {...cardData} />}
         renderNoMoreCards={() => <NoMoreCards />}
-        handleYup={this.handleYup}
+        handleYup={() => this.handleYup()}
         handleNope={this.handleNope}
         handleMaybe={this.handleMaybe}
         hasMaybeAction
