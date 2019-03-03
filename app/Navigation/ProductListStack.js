@@ -1,19 +1,31 @@
 import React from 'react';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
-import ProductListScreen from "../Screens/ProductListScreen";
-import ListScreen from "../Screens/ListScreen";
+import ProductListScreen from '../Screens/ProductListScreen';
+import ListScreen from '../Screens/ListScreen';
 
-const AppNavigator = createStackNavigator({
-  List: {
-    screen: ListScreen,
-  },
-  ProductList: {
-    screen: ProductListScreen
-  },
-},
+const ProductListStack = createStackNavigator(
   {
-    initialRouteName: 'List',
-  });
+    List: {
+      screen: ListScreen
+    },
+    ProductList: {
+      screen: ProductListScreen
+    }
+  },
+  {
+    initialRouteName: 'List'
+  }
+);
 
+export default ProductListStack;
 
-export default createAppContainer(AppNavigator);
+ProductListStack.navigationOptions = ({ navigation }) => {
+  let tabBarVisible = true;
+  if (navigation.state.index > 0) {
+    tabBarVisible = false;
+  }
+
+  return {
+    tabBarVisible
+  };
+};
