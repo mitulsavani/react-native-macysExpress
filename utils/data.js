@@ -63,7 +63,7 @@ export const CATEGORIES_DATA = [
       {
         id: 22051,
         name: 'Bags & Accessories',
-        imgURL: require('../app/images/womens/handbags.png')
+        imgURL: require('../app/images/mens/accessories.png')
       },
       {
         id: 186572,
@@ -80,17 +80,12 @@ export const CATEGORIES_DATA = [
       {
         id: 6086,
         name: 'Sale & Clearance',
-        imgURL: require('../app/images/mens/sale.png')
-      },
-      {
-        id: 196409,
-        name: '$9.99 & Under',
-        imgURL: require('../app/images/mens/sale.png')
+        imgURL: require('../app/images/kids/sale.png')
       },
       {
         id: 48691,
         name: 'Baby',
-        imgURL: require('../app/images/mens/sale.png')
+        imgURL: require('../app/images/kids/baby.png')
       },
       {
         id: 63007,
@@ -100,17 +95,13 @@ export const CATEGORIES_DATA = [
       {
         id: 188667,
         name: "Kids' Shoes",
-        imgURL: require('../app/images/mens/shoes.png')
+        imgURL: require('../app/images/kids/shoes.png')
       },
       {
         id: 188668,
         name: 'Accessories',
-        imgURL: require('../app/images/mens/shoes.png')
+        imgURL: require('../app/images/kids/accessories.png')
       },
-      {
-        id: 9612,
-        name: 'Featured Brands'
-      }
     ]
   }
 ];
