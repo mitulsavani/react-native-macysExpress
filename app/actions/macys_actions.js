@@ -7,13 +7,13 @@ export const fetchStations = (categoryId, callback) => async dispatch => {
   try {
     let { data } = await axios({
       method: 'GET',
-      url: `http://api.macys.com/v3/catalog/category/${categoryId}/browseproducts`,
+      url: `http://api.macys.com/v3/catalog/category/${categoryId}/browseproducts?imagewidth=600&imagequality=180`,
       headers: {
         accept: 'application/json',
         'x-macys-webservice-client-id': 'h4ckathon'
       }
     });
-    dispatch({ type: FETCH_CATEGORIES, payload: data.category });
+    dispatch({ type: FETCH_CATEGORIES, payload: data.category[0].product.product });
     callback();
   } catch (error) {
     console.log(error);

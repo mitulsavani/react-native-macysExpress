@@ -1,21 +1,24 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
+import { connect } from 'react-redux';
+import * as actions from '../actions';
 
 import SwipeCards from 'react-native-swipe-cards';
+import Cards from "../Components/Cards"
+// class Card extends React.Component {
+//   constructor(props) {
+//     super(props);
+//   }
 
-class Card extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <View style={[styles.card, { backgroundColor: this.props.backgroundColor }]}>
-        <Text>{this.props.text}</Text>
-      </View>
-    )
-  }
-}
+//   render() {
+//     console.log(this.props)
+//     return (
+//       <View style={[styles.card, { backgroundColor: this.props.backgroundColor }]}>
+//         <Text>{this.props.summary.name}</Text>
+//       </View>
+//     );
+//   }
+// }
 
 class NoMoreCards extends Component {
   constructor(props) {
@@ -27,49 +30,49 @@ class NoMoreCards extends Component {
       <View>
         <Text style={styles.noMoreCardsText}>No more cards</Text>
       </View>
-    )
+    );
   }
 }
 
-export default class HomeScreen extends React.Component {
+class HomeScreen extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      cards: [
-        { text: 'Tomato', backgroundColor: 'red' },
-        { text: 'Aubergine', backgroundColor: 'purple' },
-        { text: 'Courgette', backgroundColor: 'green' },
-        { text: 'Blueberry', backgroundColor: 'blue' },
-        { text: 'Umm...', backgroundColor: 'cyan' },
-        { text: 'orange', backgroundColor: 'orange' },
-      ]
-    };
   }
+
+  componentDidMount() {
+    this.fetchProducts();
+  }
+
+  fetchProducts = () => {
+    this.props.fetchStations(this.props.navigation.state.params.categories, () => {});
+  };
 
   handleYup(card) {
-    console.log(`Yup for ${card.text}`)
+    console.log(`Yup for ${card.text}`);
   }
   handleNope(card) {
-    console.log(`Nope for ${card.text}`)
+    console.log(`Nope for ${card.text}`);
   }
   handleMaybe(card) {
-    console.log(`Maybe for ${card.text}`)
+    console.log(`Maybe for ${card.text}`);
   }
-  render() {
-    // If you want a stack of cards instead of one-per-one view, activate stack mode
-    // stack={true}
+
+  renderCards = data => {
     return (
       <SwipeCards
-        cards={this.state.cards}
-        renderCard={(cardData) => <Card {...cardData} />}
+        cards={data}
+        renderCard={cardData => <Cards {...cardData} />}
         renderNoMoreCards={() => <NoMoreCards />}
-
         handleYup={this.handleYup}
         handleNope={this.handleNope}
         handleMaybe={this.handleMaybe}
         hasMaybeAction
       />
-    )
+    );
+  };
+  render() {
+    const data = this.props.categories;
+    return <View>{data.length > 0 ? this.renderCards(data) : console.log('hi')}</View>;
   }
 }
 
@@ -78,9 +81,17 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: 300,
-    height: 300,
+    height: 300
   },
   noMoreCardsText: {
-    fontSize: 22,
+    fontSize: 22
   }
-})
+});
+
+function mapStateToProps({ categories }) {
+  return { categories: categories };
+}
+export default connect(
+  mapStateToProps,
+  actions
+)(HomeScreen);

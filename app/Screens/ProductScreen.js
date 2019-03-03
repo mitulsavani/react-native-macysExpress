@@ -39,7 +39,7 @@ export default class ProductScreen extends React.Component {
   render() {
     const { category } = this.state;
     return (
-      <SafeAreaView style={{ flex: 1, backgroundColor: '#F3F3F3' }}>
+      <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
         <FlatList
           data={CATEGORIES_DATA[category].child}
           extraData={this.state}
