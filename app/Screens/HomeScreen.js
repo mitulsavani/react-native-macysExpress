@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
-import { Header } from 'react-native-elements';
+import { Header, Icon } from 'react-native-elements';
 import SettingStack from '../Navigation/SettingsStack';
 import SwipeCards from 'react-native-swipe-cards';
 import Cards from '../Components/Cards';
@@ -40,13 +40,47 @@ class HomeScreen extends React.Component {
   handleYup() {
     let temp;
     temp = this.refs['swiper'].getCurrentCard();
+    this.refs['swiper']._forceRightSwipe();
     this.saveThing(temp);
   }
-  handleNope(card) {
-    console.log(`Nope for ${card.text}`);
+
+  handleNope() {
+    let temp;
+    temp = this.refs['swiper'].getCurrentCard();
+    console.log(temp)
+    this.refs['swiper']._forceLeftSwipe();
   }
-  handleMaybe(card) {
-    console.log(`Maybe for ${card.text}`);
+
+  showIcons() {
+    return (
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "space-between",
+          paddingHorizontal: 40,
+          paddingVertical: 20
+        }}
+      >
+        <TouchableOpacity>
+          <Icon
+            reverse
+            name="close"
+            type="font-awesome"
+            color="red"
+            onPress={() => this.handleNope()}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Icon
+            reverse
+            name="ios-heart"
+            type="ionicon"
+            color="#38EEB4"
+            onPress={() => this.handleYup()}
+          />
+        </TouchableOpacity>
+      </View>
+    );
   }
 
   renderCards = data => {
@@ -57,9 +91,7 @@ class HomeScreen extends React.Component {
         renderCard={cardData => <Cards {...cardData} />}
         renderNoMoreCards={() => <NoMoreCards />}
         handleYup={() => this.handleYup()}
-        handleNope={this.handleNope}
-        handleMaybe={this.handleMaybe}
-        hasMaybeAction
+        handleNope={() => this.handleNope()}
       />
     );
   };
@@ -78,6 +110,7 @@ class HomeScreen extends React.Component {
       />
       
         {data.length > 0 ? this.renderCards(data) : console.log('hi')}
+        {this.showIcons()}
       </View>
     );
   }
