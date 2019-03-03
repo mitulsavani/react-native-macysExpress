@@ -1,29 +1,71 @@
 import React from 'react';
-import { Text, View, Button } from 'react-native';
+import { Text, View, Button, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { connect } from 'react-redux';
 
 import * as actions from '../actions';
-
 class CategoriesScreen extends React.Component {
-  componentDidMount() {
-    this.loadStations();
+  static navigationOptions = {
+    header: null
   }
-  loadStations = () => {
-    this.props.fetchStations(() => {});
-  };
   render() {
-    console.log(this.props.categories);
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Categories!</Text>
-        <Button
-        title="Products Screen"
-          onPress={() => this.props.navigation.navigate('Products')}
-        />
+      <View style={styles.container}>
+        <Text style={styles.header}>Shop by Category</Text>
+      <View style={styles.detailView}>
+          <TouchableOpacity
+            style={styles.thumbnailImageContainer}
+            onPress={() => this.props.navigation.navigate('Products')}>
+            <Image
+              style={styles.thumbnailImage}
+              source={require('../images/womens.png')}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.thumbnailImageContainer}
+            onPress={() => this.props.navigation.navigate('Products')}>
+            <Image
+              style={styles.thumbnailImage}
+              source={require('../images/mens.png')}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.thumbnailImageContainer}
+            onPress={() => this.props.navigation.navigate('Products')}>
+            <Image
+              style={styles.thumbnailImage}
+              source={require('../images/kids.png')}
+            />
+          </TouchableOpacity>
+      </View>
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingHorizontal: 27,
+    justifyContent:'center',
+  }, 
+  header: {
+    fontSize:  35,
+    fontWeight: "700",
+    color: "#434343"
+  },
+  detailView: {
+    marginTop: 30,
+  },
+  thumbnailImageContainer: {
+    paddingVertical: 15,
+  },
+  thumbnailImage: {
+    height: 195,
+    width: '100%',
+    borderRadius: 10,
+  },
+
+});
 
 function mapStateToProps({ categories }) {
   return { categories: categories };
