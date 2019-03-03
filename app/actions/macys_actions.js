@@ -1,11 +1,18 @@
 import axios from 'axios';
 import { SAVE_STATION, CLEAR_SAVED_STATIONS, REMOVE_STATION, FETCH_CATEGORIES } from './types';
 
-const STATIONS_ROOT_URL = 'https://api.voltaapi.com/v1/stations';
+const CATEGORIES_URL = 'http://api.macys.com/v4/catalog/category';
 
 export const fetchStations = callback => async dispatch => {
   try {
-    let { data } = await axios.get(STATIONS_ROOT_URL);
+    let { data } = await axios({
+      method: 'GET',
+      url: CATEGORIES_URL,
+      headers: {
+        accept: 'application/json',
+        'x-macys-webservice-client-id': 'h4ckathon'
+      }
+    });
     dispatch({ type: FETCH_CATEGORIES, payload: data });
     callback();
   } catch (error) {
