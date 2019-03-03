@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
+import { Header } from 'react-native-elements';
 
 import SwipeCards from 'react-native-swipe-cards';
 import Cards from "../Components/Cards"
@@ -72,11 +73,22 @@ class HomeScreen extends React.Component {
   };
   render() {
     const data = this.props.categories;
-    return <View>{data.length > 0 ? this.renderCards(data) : console.log('hi')}</View>;
+    return (
+      <View style={styles.container}>
+      <Header
+        leftComponent={{ text: 'Edit', style: { color: '#fff', fontSize: 20 } }}
+      />
+      
+        {data.length > 0 ? this.renderCards(data) : console.log('hi')}
+      </View>
+    );
   }
 }
 
 const styles = StyleSheet.create({
+  container:{
+    flex: 1,
+  },
   card: {
     justifyContent: 'center',
     alignItems: 'center',

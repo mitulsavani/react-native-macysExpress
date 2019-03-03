@@ -48,7 +48,6 @@ class Cards extends Component {
 
 const styles = StyleSheet.create({
   card: {
-    flex: 1,
     width: deviceWidth * 0.9,
     height: deviceHeight * 0.7,
     marginTop: 5,

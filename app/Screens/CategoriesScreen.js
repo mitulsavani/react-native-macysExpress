@@ -14,7 +14,8 @@ class CategoriesScreen extends React.Component {
 
   async componentDidMount() {
     await Font.loadAsync({
-      'productSans': require('../../assets/fonts/ProductSans-Regular.ttf'),
+      'productSans-Regular': require('../../assets/fonts/ProductSans-Regular.ttf'),
+      'productSans-Bold': require('../../assets/fonts/ProductSans-Bold.ttf'),
     });
     
     this.setState({ fontLoaded: true });
@@ -69,7 +70,7 @@ const styles = StyleSheet.create({
   header: {
     fontSize:  35,
     fontWeight: "700",
-    fontFamily: 'productSans',
+    fontFamily: 'productSans-Bold',
     color: "#434343"
   },
   detailView: {
