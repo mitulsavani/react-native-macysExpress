@@ -1,15 +1,27 @@
 import React from 'react';
 import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
-import { Icon, Rating, Button } from 'react-native-elements';
+import { Icon, Rating, Button, Header } from 'react-native-elements';
 import { Linking } from 'expo';
 
 export default class ProductListScreen extends React.Component {
+  static navigationOptions = {
+    header: null
+  };
   render() {
     let data = this.props.navigation.state.params.data;
     console.log(data)
     return (
       
       <View style={ styles.container}>
+      <Header
+          barStyle="light-content"
+          backgroundColor="#84fab0"
+          leftComponent={
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('List')}>
+              <Icon name='arrow-left' type="feather" color="white" />
+            </TouchableOpacity>
+          }
+        />
           <Image
             style={{ width: "100%", height: 250 }}
           source={{uri: data.image[0].imageurl}}

@@ -11,6 +11,7 @@ import {
   FlatList
 } from 'react-native';
 import { Font, LinearGradient } from 'expo';
+import { Header, Icon } from 'react-native-elements';
 
 import { CATEGORIES_DATA } from '../../utils/data';
 
@@ -56,6 +57,15 @@ export default class ProductScreen extends React.Component {
     const { category } = this.state;
     return (
       <View style={{ flex: 1, backgroundColor: '#fff', justifyContent: 'center' }}>
+      <Header
+          barStyle="light-content"
+          backgroundColor="#84fab0"
+          leftComponent={
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('Categories')}>
+              <Icon name='arrow-left' type="feather" color="white" />
+            </TouchableOpacity>
+          }
+        />
         <LinearGradient colors={['#84fab0', '#8fd3f4']} style={styles.backgroundGradient}>
           {this.state.fontLoaded ? (
             <Text style={styles.header}>{CATEGORIES_DATA[category].name}</Text>
@@ -156,6 +166,6 @@ const styles = StyleSheet.create({
     color: '#fff'
   },
   productListContainer: {
-    flex: 3
+    flex: 5
   }
 });
