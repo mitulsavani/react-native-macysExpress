@@ -104,9 +104,10 @@ class HomeScreen extends React.Component {
           backgroundColor="#fff"
           leftComponent={
             <TouchableOpacity onPress={() => this.props.navigation.navigate('SettingsStack')}>
-              <Text style={{ color: 'black', fontSize: 20 }}>Edit</Text>
+              <Text style={{ color: 'black', fontSize: 20, marginLeft: 27 }}>Edit</Text>
             </TouchableOpacity>
           }
+          centerComponent={{ text: 'Product', style: { fontSize: 28 }}}
         />
 
         {data.length > 0 ? this.renderCards(data) : console.log('hi')}
