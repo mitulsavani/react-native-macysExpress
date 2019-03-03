@@ -6,20 +6,6 @@ import { Header } from 'react-native-elements';
 
 import SwipeCards from 'react-native-swipe-cards';
 import Cards from '../Components/Cards';
-// class Card extends React.Component {
-//   constructor(props) {
-//     super(props);
-//   }
-
-//   render() {
-//     console.log(this.props)
-//     return (
-//       <View style={[styles.card, { backgroundColor: this.props.backgroundColor }]}>
-//         <Text>{this.props.summary.name}</Text>
-//       </View>
-//     );
-//   }
-// }
 
 class NoMoreCards extends Component {
   constructor(props) {
