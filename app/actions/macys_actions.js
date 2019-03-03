@@ -13,7 +13,7 @@ export const fetchStations = (categoryId, callback) => async dispatch => {
         'x-macys-webservice-client-id': 'h4ckathon'
       }
     });
-    dispatch({ type: FETCH_CATEGORIES, payload: data.category });
+    dispatch({ type: FETCH_CATEGORIES, payload: data.category[0].product.product });
     callback();
   } catch (error) {
     console.log(error);

@@ -12,10 +12,8 @@ class Card extends React.Component {
 
   render() {
     return (
-      <View
-        style={[styles.card, { backgroundColor: this.props.backgroundColor }]}
-      >
-        <Text>{this.props.categories}</Text>
+      <View style={[styles.card, { backgroundColor: this.props.backgroundColor }]}>
+        <Text>{this.props.summary.name}</Text>
       </View>
     );
   }
@@ -38,25 +36,15 @@ class NoMoreCards extends Component {
 class HomeScreen extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      cards: [
-        { text: 'Tomato', backgroundColor: 'red' },
-        { text: 'Aubergine', backgroundColor: 'purple' },
-        { text: 'Courgette', backgroundColor: 'green' },
-        { text: 'Blueberry', backgroundColor: 'blue' },
-        { text: 'Umm...', backgroundColor: 'cyan' },
-        { text: 'orange', backgroundColor: 'orange' }
-      ]
-    };
   }
 
   componentDidMount() {
     this.fetchProducts();
   }
 
-  fetchProducts() {
+  fetchProducts = () => {
     this.props.fetchStations(this.props.navigation.state.params.categories, () => {});
-  }
+  };
 
   handleYup(card) {
     console.log(`Yup for ${card.text}`);
@@ -68,10 +56,10 @@ class HomeScreen extends React.Component {
     console.log(`Maybe for ${card.text}`);
   }
 
-  renderCards() {
-    console.log(this.props);
-    <SwipeCards
-        cards={this.props.categories[0].product.product}
+  renderCards = data => {
+    return (
+      <SwipeCards
+        cards={data}
         renderCard={cardData => <Card {...cardData} />}
         renderNoMoreCards={() => <NoMoreCards />}
         handleYup={this.handleYup}
@@ -79,17 +67,11 @@ class HomeScreen extends React.Component {
         handleMaybe={this.handleMaybe}
         hasMaybeAction
       />
-  }
+    );
+  };
   render() {
-    console.log(Object.keys(this.props.categories));
-    // If you want a stack of cards instead of one-per-one view, activate stack mode
-    // stack={true}
-    console.log(this.props.categories);
-    return (
-    <View>
-      {this.props.categories.length > 0 ? this.renderCards() : ' '};
-    </View>
-    )
+    const data = this.props.categories;
+    return <View>{data.length > 0 ? this.renderCards(data) : console.log('hi')}</View>;
   }
 }
 
