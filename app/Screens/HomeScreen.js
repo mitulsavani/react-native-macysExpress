@@ -47,7 +47,6 @@ class HomeScreen extends React.Component {
   handleNope() {
     let temp;
     temp = this.refs['swiper'].getCurrentCard();
-    console.log(temp)
     this.refs['swiper']._forceLeftSwipe();
   }
 
@@ -55,8 +54,8 @@ class HomeScreen extends React.Component {
     return (
       <View
         style={{
-          flexDirection: "row",
-          justifyContent: "space-between",
+          flexDirection: 'row',
+          justifyContent: 'space-between',
           paddingHorizontal: 40,
           paddingVertical: 20
         }}
@@ -99,16 +98,16 @@ class HomeScreen extends React.Component {
     const data = this.props.categories;
     return (
       <View style={styles.container}>
-      <Header
-        barStyle="light-content"
-        backgroundColor="#fff"
-        leftComponent={
-          <TouchableOpacity onPress={() => this.props.navigation.navigate('SettingsStack')}>
-          <Text style={{ color: 'black', fontSize: 20}}>Edit</Text>
-          </TouchableOpacity>
-        }
-      />
-      
+        <Header
+          barStyle="light-content"
+          backgroundColor="#fff"
+          leftComponent={
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('SettingsStack')}>
+              <Text style={{ color: 'black', fontSize: 20 }}>Edit</Text>
+            </TouchableOpacity>
+          }
+        />
+
         {data.length > 0 ? this.renderCards(data) : console.log('hi')}
         {this.showIcons()}
       </View>
@@ -117,8 +116,8 @@ class HomeScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container:{
-    flex: 1,
+  container: {
+    flex: 1
   },
   card: {
     justifyContent: 'center',

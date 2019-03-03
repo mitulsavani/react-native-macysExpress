@@ -27,26 +27,11 @@ class Cards extends Component {
     }
   }
 
-  handleYup() {
-    console.log(this.props.image[0]);
-    let temp;
-    temp = this.refs['swiper'].getCurrentCard();
-    this.refs['swiper']._forceRightSwipe();
-    this.saveThing(temp);
-  }
-  handleNope(card) {
-    console.log(`Nope for ${card.text}`);
-  }
-
   render() {
-    console.log(this.props);
     return (
       <View style={styles.container}>
         <TouchableOpacity onPress={() => this.nextPhoto()}>
-          <ImageBackground
-            style={styles.card}
-            source={{ uri: this.props.image[0].imageurl }}
-          />
+          <ImageBackground style={styles.card} source={{ uri: this.props.image[0].imageurl }} />
         </TouchableOpacity>
         <View style={styles.cardInfo}>
           <Text
@@ -68,11 +53,7 @@ class Cards extends Component {
           ) : null}
           {this.props.summary.customerrating ? (
             <View style={{ marginTop: 5 }}>
-              <Rating
-                imageSize={20}
-                readonly
-                startingValue={this.props.summary.customerrating}
-              />
+              <Rating imageSize={20} readonly startingValue={this.props.summary.customerrating} />
             </View>
           ) : null}
           {/* {this.props.summary.customerrating} */}
