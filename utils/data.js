@@ -1,6 +1,6 @@
 export const CATEGORIES_DATA = [
   {
-    name: 'Women',
+    name: 'Womens',
     url: 'http://www1.macys.com/shop/womens-clothing?id=118&edge=hybrid',
     child: [
       {
@@ -37,7 +37,7 @@ export const CATEGORIES_DATA = [
   },
   {
     id: 1,
-    name: 'Men',
+    name: 'Mens',
     url: 'http://www1.macys.com/shop/mens-clothing?id=1&edge=hybrid',
     child: [
       {
