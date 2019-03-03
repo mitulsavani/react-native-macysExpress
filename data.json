@@ -5,16 +5,6 @@
       "url": "http://www1.macys.com/shop/womens-clothing?id=118&edge=hybrid",
       "child": [
         {
-          "id": 160463,
-          "name": "25% Off Best Brands"
-        },
-        {
-          "id": 69811,
-          "name": "Limited-Time Specials",
-          "url": "/shop/womens-clothing/limited-time-specials?id=69811&edge=hybrid",
-          "hId": 69853
-        },
-        {
           "id": 10066,
           "name": "Sale & Clearance"
         },
@@ -23,20 +13,8 @@
           "name": "Women's Clothing"
         },
         {
-          "id": 190470,
-          "name": "Special Sizes"
-        },
-        {
-          "id": 202775,
-          "name": "The Dress Destination"
-        },
-        {
           "id": 9572,
           "name": "Women's Brands"
-        },
-        {
-          "id": 67112,
-          "name": "Contemporary Brands"
         },
         {
           "id": 191062,
@@ -57,18 +35,6 @@
         {
           "id": 190617,
           "name": "Beauty"
-        },
-        {
-          "id": 186342,
-          "name": "New & Noteworthy"
-        },
-        {
-          "id": 50703,
-          "name": "Featured Shops"
-        },
-        {
-          "id": 161446,
-          "name": "Services"
         }
       ]
     },
@@ -78,16 +44,6 @@
         "name": "Men",
         "url": "http://www1.macys.com/shop/mens-clothing?id=1&edge=hybrid",
         "child": [
-          {
-            "id": 225492,
-            "name": "25% Off Best Brands"
-          },
-          {
-            "id": 45980,
-            "name": "Limited-Time Specials",
-            "url": "/shop/mens-clothing/limited-time-specials?id=45980&edge=hybrid",
-            "hId": 61078
-          },
           {
             "id": 9559,
             "name": "Sale & Clearance"
@@ -109,28 +65,12 @@
             "name": "Bags & Accessories"
           },
           {
-            "id": 197051,
-            "name": "Men's Watches"
-          },
-          {
             "id": 186572,
             "name": "Cologne & Grooming"
           },
           {
-            "id": 186569,
-            "name": "New & Noteworthy"
-          },
-          {
             "id": 9557,
             "name": "Men's Brands"
-          },
-          {
-            "id": 47923,
-            "name": "Featured Shops"
-          },
-          {
-            "id": 161456,
-            "name": "Services"
           }
         ]
       }
@@ -142,22 +82,12 @@
         "url": "http://www1.macys.com/shop/kids-clothes?id=5991&edge=hybrid",
         "child": [
           {
-            "id": 59924,
-            "name": "Limited-Time Specials",
-            "url": "/shop/kids-clothes/limited-time-specials?id=59924&edge=hybrid",
-            "hId": 45756
-          },
-          {
             "id": 6086,
             "name": "Sale & Clearance"
           },
           {
             "id": 196409,
             "name": "$9.99 & Under"
-          },
-          {
-            "id": 230660,
-            "name": "Easter Destination"
           },
           {
             "id": 48691,
@@ -180,10 +110,6 @@
             "name": "Boys' Clothing"
           },
           {
-            "id": 186563,
-            "name": "New & Noteworthy"
-          },
-          {
             "id": 63007,
             "name": "Kids' Clothing"
           },
@@ -194,16 +120,6 @@
           {
             "id": 188668,
             "name": "Accessories"
-          },
-          {
-            "id": 210254,
-            "name": "Toys & Games",
-            "url": "/shop/for-the-home/toys-games?id=210254",
-            "hId": 188669
-          },
-          {
-            "id": 70578,
-            "name": "Character Shop"
           },
           {
             "id": 9612,
