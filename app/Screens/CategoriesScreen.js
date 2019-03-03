@@ -1,6 +1,7 @@
 import React from 'react';
-import { Text, View, ScrollView } from 'react-native';
+import { Text, View, ScrollView, Button } from 'react-native';
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
+import { Text, View, Button } from 'react-native';
 import { connect } from 'react-redux';
 
 import * as actions from '../actions';
@@ -27,6 +28,10 @@ class CategoriesScreen extends React.Component {
         <ScrollView>
         {this.props.categories.length > 0 ? this.renderCategories() : null}
         </ScrollView>
+        <Button
+        title="Products Screen"
+          onPress={() => this.props.navigation.navigate('Products')}
+        />
       </View>
     );
   }

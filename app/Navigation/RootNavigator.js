@@ -1,18 +1,19 @@
 import React from 'react';
-import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
-import HomeScreen from "../Screens/HomeScreen";
-import CategoriesScreen from "../Screens/CategoriesScreen";
-import ListScreen from "../Screens/ListScreen";
+import { createStackNavigator, createAppContainer } from 'react-navigation';
+import HomeStack from "./HomeStack";
+import SettingsStack from "./SettingsStack";
+import ProductListStack from './ProductListStack';
 
-const TabNavigator = createBottomTabNavigator({
-  Categories: CategoriesScreen,
-  Home: HomeScreen,
-  List: ListScreen
+const AppNavigator = createStackNavigator({
+  HomeStack: HomeStack,
+  SettingsStack: SettingsStack,
+  ListStack:ProductListStack,
 },
 {
-  initialRouteName: 'Home',
+  initialRouteName: 'SettingsStack',
+  headerMode: "none"
 });
 
 
 
-export default createAppContainer(TabNavigator);
+export default createAppContainer(AppNavigator);
