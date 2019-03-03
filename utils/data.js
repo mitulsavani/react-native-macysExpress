@@ -5,35 +5,33 @@ export const CATEGORIES_DATA = [
     child: [
       {
         id: 10066,
-        name: 'Sale & Clearance'
+        name: 'Sale & Clearance',
+        imgURL: require('../app/images/womens/sale.png')
       },
       {
         id: 22006,
-        name: "Women's Clothing"
-      },
-      {
-        id: 9572,
-        name: "Women's Brands"
+        name: "Women's Clothing",
+        imgURL: require('../app/images/womens/clothing.png')
       },
       {
         id: 191062,
-        name: 'Bras, Panties & Lingerie'
+        name: 'Bras, Panties & Lingerie',
+        imgURL: require('../app/images/womens/lingerie.png')
       },
       {
         id: 190476,
-        name: "Women's Shoes"
+        name: "Women's Shoes",
+        imgURL: require('../app/images/womens/shoes.png')
       },
       {
         id: 190603,
-        name: 'Handbags & Accessories'
-      },
-      {
-        id: 190610,
-        name: 'Jewelry & Watches'
+        name: 'Handbags & Accessories',
+        imgURL: require('../app/images/womens/handbags.png')
       },
       {
         id: 190617,
-        name: 'Beauty'
+        name: 'Beauty',
+        imgURL: require('../app/images/womens/beauty.png')
       }
     ]
   },

@@ -30,8 +30,7 @@ export default class ProductScreen extends React.Component {
           })
         }
       >
-        <Image style={styles.thumbnailImage} source={require('../../assets/icon.png')} />
-        <Text>{item.name}</Text>
+        <Image style={styles.thumbnailImage} source={item.imgURL} />
       </TouchableOpacity>
     </View>
   );
@@ -108,12 +107,14 @@ const styles = StyleSheet.create({
   },
 
   thumbnailImageContainer: {
-    padding: 13
+    padding: 5
   },
 
   thumbnailImage: {
-    height: 145,
-    width: 145
+    height: 160,
+    width: 160,
+    borderRadius: 10
+
   },
 
   planningButton: {
