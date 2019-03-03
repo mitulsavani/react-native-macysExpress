@@ -23,7 +23,7 @@ class ListScreen extends React.Component {
           </Text>
           <Button
             onPress={() => this.props.navigation.navigate('ProductList', { data })}
-          buttonStyle={{ backgroundColor: '#8fd3f4', borderRadius: 10, marginLeft: 0, marginRight: 0, marginBottom: 0 }}
+            buttonStyle={{ backgroundColor: '#8fd3f4', borderRadius: 10, marginLeft: 0, marginRight: 0, marginBottom: 0 }}
             title='VIEW' />
         </Card>
       )

@@ -1,10 +1,12 @@
 import React from 'react';
-import { Text, View, Button, StyleSheet, Image } from 'react-native';
-import { Icon, Rating } from 'react-native-elements';
+import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { Icon, Rating, Button } from 'react-native-elements';
+import { Linking } from 'expo';
 
 export default class ProductListScreen extends React.Component {
   render() {
     let data = this.props.navigation.state.params.data;
+    console.log(data)
     return (
       
       <View style={ styles.container}>
@@ -19,16 +21,48 @@ export default class ProductListScreen extends React.Component {
               <Rating imageSize={20} readonly startingValue={data.summary.customerrating} />
             </View>
           ) : null}
-            <Text style={styles.productPrice}>Price</Text>
-            <Text style={styles.productReviews}>Reviews</Text>
-            <Text style={styles.productBrand}>Brand</Text>
-            <Button title="BUY NOW"></Button>
-            <Button title="Book lyft"></Button>
+          {data.price.regular.high > 0 ? (
+            <View style={{ marginTop: 5 }}>
+              <Text style={{ fontSize: 20, fontFamily: 'productSans-Regular' }}>
+                {`Price: ${data.price.regular.high}`}
+              </Text>
+            </View>
+          ) : null}
+          {data.summary.totalreviews > 0 ? (
+            <View style={{ marginTop: 5 }}>
+              <Text style={{ fontSize: 20, fontFamily: 'productSans-Regular' }}>
+                {`Total Reviews: ${data.summary.totalreviews}`}
+              </Text>
+            </View>
+          ) : null}
+          {data.summary.brand ? (
+            <View style={{ marginTop: 5 }}>
+              <Text style={{ fontSize: 20, fontFamily: 'productSans-Regular' }}>
+                {`Brand: ${data.summary.brand}`}
+              </Text>
+            </View>
+          ) : null}
+            <View style={{justifyContent: 'center', alignItems: 'center'}}>
+              <TouchableOpacity onPress={() => Linking.openURL(data.summary.producturl)}>
+                <Image
+                  style={{height: 40, width: 150, marginVertical: 20}}
+                  source={require('../../assets/macys.png')}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => Linking.openURL('lyft://ridetype?id=lyft&destination[latitude]=37.673430&destination[longitude]=-122.470750')}>
+                <Image
+                  style={{height: 40, width: 150}}
+                  source={require('../../assets/lyft.png')}
+                />
+              </TouchableOpacity>
+            </View>
           </View>
       </View>
     );
   }
 }
+
+
 
 const styles = StyleSheet.create({
   container: {
@@ -43,13 +77,6 @@ const styles = StyleSheet.create({
   productName: {
     fontSize: 30,
     fontWeight: "700",
-  },
-  productPrice: {
-    fontSize: 25
-  },
-  productReviews: {
-    fontSize: 17, 
-    color: "grey"
   },
   productBrand: {
     fontSize: 20,
