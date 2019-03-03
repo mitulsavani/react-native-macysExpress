@@ -39,7 +39,6 @@ export default class ProductScreen extends React.Component {
 
   render() {
     const { category } = this.state;
-    console.log(CATEGORIES_DATA[category]);
     return (
       <SafeAreaView style={{ flex: 1, backgroundColor: '#F3F3F3' }}>
         <FlatList
