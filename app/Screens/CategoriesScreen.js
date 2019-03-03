@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View, ScrollView, Button, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { connect } from 'react-redux';
-import { Font } from 'expo';
+import { Font, LinearGradient } from 'expo';
 
 import * as actions from '../actions';
 class CategoriesScreen extends React.Component {
@@ -25,11 +25,15 @@ class CategoriesScreen extends React.Component {
   render() {
     return (
       <ScrollView contentContainerStyle={styles.container}>
-        {
-          this.state.fontLoaded ? (
-            <Text style={styles.header}>Shop by Category</Text>
-          ) : null
-        }
+        <LinearGradient
+          colors={['#84fab0', '#8fd3f4']}
+          style={styles.backgroundGradient}>
+          {
+            this.state.fontLoaded ? (
+              <Text style={styles.header}>Shop by Category</Text>
+            ) : null
+          }
+        </LinearGradient>
       <View style={styles.detailView}>
           <TouchableOpacity
             style={styles.thumbnailImageContainer}
@@ -64,17 +68,23 @@ class CategoriesScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingHorizontal: 27,
     justifyContent:'center',
   }, 
+  backgroundGradient: {
+    flex: 1,
+    justifyContent:'center',
+    paddingHorizontal: 27,
+    backgroundColor: 'red',
+  },
   header: {
     fontSize:  35,
     fontWeight: "700",
     fontFamily: 'productSans-Bold',
-    color: "#434343"
+    color: "#fff"
   },
   detailView: {
-    marginTop: 30,
+    marginTop: -70,
+    paddingHorizontal: 27,
   },
   thumbnailImageContainer: {
     paddingVertical: 15,

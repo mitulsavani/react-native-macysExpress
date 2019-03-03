@@ -42,41 +42,45 @@ class Cards extends Component {
     console.log(this.props);
     return (
       <View style={styles.container}>
-        <TouchableOpacity onPress={() => this.nextPhoto()}>
-          <ImageBackground
-            style={styles.card}
-            source={{ uri: this.props.image[0].imageurl }}
-          />
-        </TouchableOpacity>
+        <ImageBackground
+          style={styles.card}
+          source={{ uri: this.props.image[0].imageurl }}
+        >
+        </ImageBackground>
         <View style={styles.cardInfo}>
           <Text
             style={{
-              fontSize: 20,
-              fontWeight: 'bold',
+              fontSize: 27,
+              fontWeight: "bold",
               fontFamily: 'productSans-Regular',
               color: '#000'
             }}
           >
             {this.props.summary.name}
-          </Text>
-          {this.props.price.regular.high > 0 ? (
-            <View style={{ marginTop: 5 }}>
-              <Text style={{ fontSize: 20, fontFamily: 'productSans-Regular' }}>
-                {this.props.price.regular.high}
-              </Text>
-            </View>
-          ) : null}
-          {this.props.summary.customerrating ? (
-            <View style={{ marginTop: 5 }}>
-              <Rating
-                imageSize={20}
-                readonly
-                startingValue={this.props.summary.customerrating}
-              />
-            </View>
-          ) : null}
-          {/* {this.props.summary.customerrating} */}
-        </View>
+            </Text>
+            {
+              this.props.price.regular.high > 0 ? (
+                <View style={{marginTop: 5}}>
+                <Text style={{ fontSize: 20, fontFamily: 'productSans-Regular' }}>
+                  {this.props.price.regular.high}
+                </Text>
+                </View>
+              ): null
+            }
+            {
+              this.props.summary.customerrating ? (
+                <View style={{marginTop: 5}}>
+                <Rating
+                  imageSize={20}
+                  readonly
+                  startingValue={this.props.summary.customerrating}
+                />
+                </View>
+              ): null
+            }
+            {/* {this.props.summary.customerrating} */}
+          
+      </View>
       </View>
     );
   }
@@ -84,9 +88,10 @@ class Cards extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
+    flex:1,
+    alignItems:'center',
+    justifyContent:'center',
+    paddingHorizontal: 20
   },
   card: {
     width: deviceWidth * 0.9,
