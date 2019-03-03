@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 import { Header } from 'react-native-elements';
-
+import SettingStack from '../Navigation/SettingsStack';
 import SwipeCards from 'react-native-swipe-cards';
 import Cards from '../Components/Cards';
 
@@ -68,7 +68,13 @@ class HomeScreen extends React.Component {
     return (
       <View style={styles.container}>
       <Header
-        leftComponent={{ text: 'Edit', style: { color: '#fff', fontSize: 20 } }}
+        barStyle="light-content"
+        backgroundColor="#fff"
+        leftComponent={
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('SettingsStack')}>
+          <Text style={{ color: 'black', fontSize: 20}}>Edit</Text>
+          </TouchableOpacity>
+        }
       />
       
         {data.length > 0 ? this.renderCards(data) : console.log('hi')}

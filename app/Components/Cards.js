@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { TouchableOpacity, ImageBackground, View, Text, StyleSheet, Dimensions } from "react-native";
-import {Icon} from "react-native-elements";
+import {Icon, Rating} from "react-native-elements";
 
 var deviceWidth = Dimensions.get("window").width;
 var deviceHeight = Dimensions.get("window").height;
@@ -63,6 +63,7 @@ class Cards extends Component {
 
 
   render() {
+    console.log(this.props);
     return (
       <View style={styles.container}>
       <TouchableOpacity onPress={() => this.nextPhoto()}>
@@ -77,11 +78,37 @@ class Cards extends Component {
             style={{
               fontSize: 20,
               fontWeight: "bold",
+              fontFamily: 'productSans-Regular',
               color: "#000"
             }}
           >
             {this.props.summary.name}
-          </Text>
+            </Text>
+            {
+              this.props.price.regular.high > 0 ? (
+                <View style={{marginTop: 5}}>
+                <Text style={{ fontSize: 20, fontFamily: 'productSans-Regular' }}>
+                  {this.props.price.regular.high}
+                </Text>
+                </View>
+              ): null
+            }
+            {
+              this.props.summary.customerrating ? (
+                <View style={{marginTop: 5}}>
+                <Rating
+                  imageSize={20}
+                  readonly
+                  startingValue={this.props.summary.customerrating}
+                />
+                </View>
+              ): null
+            }
+            {/* {this.props.summary.customerrating} */}
+
+
+
+          
       </View>
       {this.showIcons()}
       </View>
