@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Button, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { Text, View, ScrollView, Button, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { connect } from 'react-redux';
 import { Font } from 'expo';
 
@@ -23,7 +23,7 @@ class CategoriesScreen extends React.Component {
   
   render() {
     return (
-      <View style={styles.container}>
+      <ScrollView contentContainerStyle={styles.container}>
         {
           this.state.fontLoaded ? (
             <Text style={styles.header}>Shop by Category</Text>
@@ -55,7 +55,7 @@ class CategoriesScreen extends React.Component {
             />
           </TouchableOpacity>
       </View>
-      </View>
+      </ScrollView>
     );
   }
 }

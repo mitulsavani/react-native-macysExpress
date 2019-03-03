@@ -14,22 +14,22 @@ export const CATEGORIES_DATA = [
         imgURL: require('../app/images/womens/clothing.png')
       },
       {
-        id: 191062,
+        id: 225,
         name: 'Bras, Panties & Lingerie',
         imgURL: require('../app/images/womens/lingerie.png')
       },
       {
-        id: 190476,
+        id: 56233,
         name: "Women's Shoes",
         imgURL: require('../app/images/womens/shoes.png')
       },
       {
-        id: 190603,
+        id: 26846,
         name: 'Handbags & Accessories',
         imgURL: require('../app/images/womens/handbags.png')
       },
       {
-        id: 190617,
+        id: 669,
         name: 'Beauty',
         imgURL: require('../app/images/womens/beauty.png')
       }
@@ -42,32 +42,34 @@ export const CATEGORIES_DATA = [
     child: [
       {
         id: 9559,
-        name: 'Sale & Clearance'
+        name: 'Sale & Clearance',
+        imgURL: require('../app/images/mens/sale.png')
       },
       {
         id: 22050,
-        name: "Men's Clothing"
+        name: "Men's Clothing",
+        imgURL: require('../app/images/mens/clothing.png')
       },
       {
         id: 70655,
-        name: "Men's Shoes"
+        name: "Men's Shoes",
+        imgURL: require('../app/images/mens/shoes.png')
       },
       {
         id: 70504,
-        name: 'Activewear'
+        name: 'Activewear',
+        imgURL: require('../app/images/mens/activewear.png')
       },
       {
         id: 22051,
-        name: 'Bags & Accessories'
+        name: 'Bags & Accessories',
+        imgURL: require('../app/images/womens/handbags.png')
       },
       {
         id: 186572,
-        name: 'Cologne & Grooming'
+        name: 'Cologne & Grooming',
+        imgURL: require('../app/images/mens/cologne.png')
       },
-      {
-        id: 9557,
-        name: "Men's Brands"
-      }
     ]
   },
   {
@@ -77,43 +79,33 @@ export const CATEGORIES_DATA = [
     child: [
       {
         id: 6086,
-        name: 'Sale & Clearance'
+        name: 'Sale & Clearance',
+        imgURL: require('../app/images/mens/sale.png')
       },
       {
         id: 196409,
-        name: '$9.99 & Under'
+        name: '$9.99 & Under',
+        imgURL: require('../app/images/mens/sale.png')
       },
       {
         id: 48691,
-        name: 'Baby'
-      },
-      {
-        id: 22054,
-        name: "Girls' Sizes"
-      },
-      {
-        id: 188665,
-        name: "Girls' Clothing"
-      },
-      {
-        id: 22055,
-        name: "Boys' Sizes"
-      },
-      {
-        id: 188666,
-        name: "Boys' Clothing"
+        name: 'Baby',
+        imgURL: require('../app/images/mens/sale.png')
       },
       {
         id: 63007,
-        name: "Kids' Clothing"
+        name: "Kids' Clothing",
+        imgURL: require('../app/images/mens/clothing.png')
       },
       {
         id: 188667,
-        name: "Kids' Shoes"
+        name: "Kids' Shoes",
+        imgURL: require('../app/images/mens/shoes.png')
       },
       {
         id: 188668,
-        name: 'Accessories'
+        name: 'Accessories',
+        imgURL: require('../app/images/mens/shoes.png')
       },
       {
         id: 9612,

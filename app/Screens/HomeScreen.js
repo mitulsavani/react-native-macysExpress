@@ -4,20 +4,21 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 
 import SwipeCards from 'react-native-swipe-cards';
+import Cards from "../Components/Cards"
+// class Card extends React.Component {
+//   constructor(props) {
+//     super(props);
+//   }
 
-class Card extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <View style={[styles.card, { backgroundColor: this.props.backgroundColor }]}>
-        <Text>{this.props.summary.name}</Text>
-      </View>
-    );
-  }
-}
+//   render() {
+//     console.log(this.props)
+//     return (
+//       <View style={[styles.card, { backgroundColor: this.props.backgroundColor }]}>
+//         <Text>{this.props.summary.name}</Text>
+//       </View>
+//     );
+//   }
+// }
 
 class NoMoreCards extends Component {
   constructor(props) {
@@ -60,7 +61,7 @@ class HomeScreen extends React.Component {
     return (
       <SwipeCards
         cards={data}
-        renderCard={cardData => <Card {...cardData} />}
+        renderCard={cardData => <Cards {...cardData} />}
         renderNoMoreCards={() => <NoMoreCards />}
         handleYup={this.handleYup}
         handleNope={this.handleNope}
