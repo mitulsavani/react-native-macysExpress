@@ -1,119 +1,55 @@
 import React from 'react';
-import { 
-  Text, 
-  View, 
+import {
+  Text,
+  View,
   Button,
   StyleSheet,
   ScrollView,
   Image,
   TouchableOpacity,
-  SafeAreaView
+  SafeAreaView,
+  FlatList
 } from 'react-native';
+import { CATEGORIES_DATA } from '../../utils/data';
 
 export default class ProductScreen extends React.Component {
+  constructor(props) {
+    super(props);
+    const category = props.navigation.state.params && props.navigation.state.params.category;
+    this.state = {
+      category: category
+    };
+  }
+  _renderItem = ({ item }) => (
+    <View style={styles.smallRow}>
+      <TouchableOpacity
+        style={styles.thumbnailImageContainer}
+        onPress={() =>
+          this.props.navigation.navigate('HomeStack', {
+            categories: item.id
+          })
+        }
+      >
+        <Image style={styles.thumbnailImage} source={require('../../assets/icon.png')} />
+        <Text>{item.name}</Text>
+      </TouchableOpacity>
+    </View>
+  );
+  _keyExtractor = (item, index) => item.id.toString();
+
   render() {
+    const { category } = this.state;
+    console.log(CATEGORIES_DATA[category]);
     return (
       <SafeAreaView style={{ flex: 1, backgroundColor: '#F3F3F3' }}>
-      <ScrollView style={styles.container}>
-        <View style={styles.smallRow}>
-          <TouchableOpacity
-            style={styles.thumbnailImageContainer}
-            onPress={() => this.props.navigation.navigate('Option', { categories: CATEGORIES, category_key: "Theatre" })}>
-            <Image
-              style={styles.thumbnailImage}
-              source={require('../../assets/icon.png')}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.thumbnailImageContainer}
-            onPress={() => this.props.navigation.navigate('Option', { categories: CATEGORIES, category_key: "Food" })}>
-            <Image
-              style={styles.thumbnailImage}
-              source={require('../../assets/icon.png')}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.thumbnailImageContainer}
-            onPress={() => this.props.navigation.navigate('Option', { categories: CATEGORIES, category_key: "Beach" })}>
-            <Image
-              style={styles.thumbnailImage}
-              source={require('../../assets/icon.png')}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.thumbnailImageContainer}
-            onPress={() => this.props.navigation.navigate('Option', { categories: CATEGORIES, category_key: "Museum" })}>
-            <Image
-              style={styles.thumbnailImage}
-              source={require('../../assets/icon.png')}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.thumbnailImageContainer}
-            onPress={() => this.props.navigation.navigate('Option', { categories: CATEGORIES, category_key: "Arts" })}>
-            <Image
-              style={styles.thumbnailImage}
-              source={require('../../assets/icon.png')}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.thumbnailImageContainer}
-            onPress={() => this.props.navigation.navigate('Option', { categories: CATEGORIES, category_key: "Bar" })}>
-            <Image
-              style={styles.thumbnailImage}
-              source={require('../../assets/icon.png')}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.thumbnailImageContainer}
-            onPress={() => this.props.navigation.navigate('Option', { categories: CATEGORIES, category_key: "Clothing" })}>
-            <Image
-              style={styles.thumbnailImage}
-              source={require('../../assets/icon.png')}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.thumbnailImageContainer}
-            onPress={() => this.props.navigation.navigate('Option', { categories: CATEGORIES, category_key: "Coffee" })}>
-            <Image
-              style={styles.thumbnailImage}
-              source={require('../../assets/icon.png')}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.thumbnailImageContainer}
-            onPress={() => this.props.navigation.navigate('Option', { categories: CATEGORIES, category_key: "Events" })}>
-            <Image
-              style={styles.thumbnailImage}
-              source={require('../../assets/icon.png')}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.thumbnailImageContainer}
-            onPress={() => this.props.navigation.navigate('Option', { categories: CATEGORIES, category_key: "Hotel" })}>
-            <Image
-              style={styles.thumbnailImage}
-              source={require('../../assets/icon.png')}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.thumbnailImageContainer}
-            onPress={() => this.props.navigation.navigate('Option', { categories: CATEGORIES, category_key: "Spiritual" })}>
-            <Image
-              style={styles.thumbnailImage}
-              source={require('../../assets/icon.png')}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.thumbnailImageContainer}
-            onPress={() => this.props.navigation.navigate('Option', { categories: CATEGORIES, category_key: "Sports" })}>
-            <Image
-              style={styles.thumbnailImage}
-              source={require('../../assets/icon.png')}
-            />
-          </TouchableOpacity>
-        </View>
-      </ScrollView>
+        <FlatList
+          data={CATEGORIES_DATA[category].child}
+          extraData={this.state}
+          keyExtractor={this._keyExtractor}
+          renderItem={this._renderItem}
+          columnWrapperStyle={styles.smallRow}
+          numColumns={2}
+        />
       </SafeAreaView>
     );
   }
@@ -121,7 +57,7 @@ export default class ProductScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: 'white'
   },
   plannerOuterContainer: {
     height: 600,
@@ -134,26 +70,26 @@ const styles = StyleSheet.create({
   placeText: {
     fontFamily: 'futura',
     fontSize: 40,
-    textAlignVertical: "center",
-    textAlign: "left",
+    textAlignVertical: 'center',
+    textAlign: 'left',
     marginLeft: 30,
-    color: 'white',
+    color: 'white'
   },
 
   nameText: {
     fontFamily: 'segoe',
     color: 'white',
     fontSize: 40,
-    textAlignVertical: "center",
-    textAlign: "left",
+    textAlignVertical: 'center',
+    textAlign: 'left',
     marginLeft: 30,
     marginTop: 30
   },
   greetingText: {
     fontFamily: 'segoe',
     fontSize: 25,
-    textAlignVertical: "center",
-    textAlign: "left",
+    textAlignVertical: 'center',
+    textAlign: 'left',
     marginLeft: 30,
     marginTop: 30
   },
@@ -178,11 +114,11 @@ const styles = StyleSheet.create({
 
   thumbnailImage: {
     height: 145,
-    width: 145,
+    width: 145
   },
 
   planningButton: {
     marginTop: 50,
     marginLeft: 30
   }
-})
+});

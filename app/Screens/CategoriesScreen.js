@@ -18,8 +18,8 @@ class CategoriesScreen extends React.Component {
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <Text>Categories!</Text>
         <Button
-        title="Products Screen"
-          onPress={() => this.props.navigation.navigate('Products')}
+          title="Products Screen"
+          onPress={() => this.props.navigation.navigate('Products', { category: 0 })}
         />
       </View>
     );
