@@ -34,6 +34,7 @@ class HomeScreen extends React.Component {
     this.props.fetchStations(this.props.navigation.state.params.categories, () => {});
   };
   saveThing(card) {
+    console.log(Object.keys(card));
     this.props.saveStation(card);
   }
 
