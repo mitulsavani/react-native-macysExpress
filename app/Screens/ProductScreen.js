@@ -59,14 +59,15 @@ export default class ProductScreen extends React.Component {
       <View style={{ flex: 1, backgroundColor: '#fff', justifyContent: 'center' }}>
       <Header
           barStyle="light-content"
-          backgroundColor="#84fab0"
+          backgroundColor="#FFB199"
+          containerStyle={{ backgroundColor: '#FFB199', borderBottomWidth: 0, borderBottomColor: 'transparent', elevation: null}}
           leftComponent={
             <TouchableOpacity onPress={() => this.props.navigation.navigate('Categories')}>
               <Icon name='arrow-left' type="feather" color="white" />
             </TouchableOpacity>
           }
         />
-        <LinearGradient colors={['#84fab0', '#8fd3f4']} style={styles.backgroundGradient}>
+        <LinearGradient colors={['#FFB199', '#FF0844']} style={styles.backgroundGradient}>
           {this.state.fontLoaded ? (
             <Text style={styles.header}>{CATEGORIES_DATA[category].name}</Text>
           ) : null}
@@ -93,7 +94,7 @@ const styles = StyleSheet.create({
   plannerOuterContainer: {
     height: 600,
     // justifyContent: 'center',
-    backgroundColor: '#307983'
+    backgroundColor: '#FF0844'
   },
   plannerInnerContainer: {
     marginTop: 220

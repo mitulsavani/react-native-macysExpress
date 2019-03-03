@@ -35,7 +35,7 @@ class CategoriesScreen extends React.Component {
   render() {
     return (
       <ScrollView contentContainerStyle={styles.container}>
-        <LinearGradient colors={['#84fab0', '#8fd3f4']} style={styles.backgroundGradient}>
+        <LinearGradient colors={['#FFB199', '#FF0844']} style={styles.backgroundGradient}>
           {this.state.fontLoaded ? <Text style={styles.header}>Shop by Category</Text> : null}
         </LinearGradient>
         <View style={styles.detailView}>

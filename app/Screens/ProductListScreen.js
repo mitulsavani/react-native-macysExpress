@@ -5,7 +5,7 @@ import { Linking } from 'expo';
 
 export default class ProductListScreen extends React.Component {
   static navigationOptions = {
-    header: null
+    header: null,
   };
   render() {
     let data = this.props.navigation.state.params.data;
@@ -15,7 +15,7 @@ export default class ProductListScreen extends React.Component {
       <View style={ styles.container}>
       <Header
           barStyle="light-content"
-          backgroundColor="#84fab0"
+          backgroundColor="#FFB199"
           leftComponent={
             <TouchableOpacity onPress={() => this.props.navigation.navigate('List')}>
               <Icon name='arrow-left'git type="feather" color="white" />

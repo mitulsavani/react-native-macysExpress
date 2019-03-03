@@ -24,13 +24,13 @@ const TabNavigator = createBottomTabNavigator(
           <Icon
             name={iconName}
             type="ionicon"
-            color={focused ? '#1A8F85' : 'gray'}
+            color={focused ? '#FF0844' : 'gray'}
           />
         );
       },
     }),
     tabBarOptions: {
-      activeTintColor: '#1A8F85',
+      activeTintColor: '#FF0844',
       inactiveTintColor: 'gray',
       showLabel: false,
       tabStyle: {
