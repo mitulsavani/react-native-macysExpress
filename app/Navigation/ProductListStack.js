@@ -29,3 +29,4 @@ ProductListStack.navigationOptions = ({ navigation }) => {
     tabBarVisible
   };
 };
+
