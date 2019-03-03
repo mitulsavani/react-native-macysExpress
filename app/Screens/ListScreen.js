@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { LinearGradient } from 'expo';
 
 import * as actions from '../actions';
+import { processFontFamily } from 'expo-font';
 
 class ListScreen extends React.Component {
   static navigationOptions = {
@@ -14,15 +15,17 @@ class ListScreen extends React.Component {
   renderLikedThings() {
     return this.props.savedStations.map(data => {
       return (
-        <Card key={data.id}
+        <Card containerStyle={{borderRadius: 10}}
+        key={data.id}
           image={{ uri: data.image[0].imageurl }}>
-          <Text style={{ marginBottom: 10 }}>
+          <Text style={{ marginBottom: 10, fontFamily: 'productSans-Regular' }}>
             {data.summary.name}
           </Text>
           <Button
-            backgroundColor='#03A9F4'
-            buttonStyle={{ borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0 }}
-            title='VIEW' />
+
+            buttonStyle={{ backgroundColor: '#8fd3f4', borderRadius: 10, marginLeft: 0, marginRight: 0, marginBottom: 0 }}
+            title='VIEW' 
+            />
         </Card>
       )
     })
@@ -61,7 +64,8 @@ const styles = StyleSheet.create({
     marginHorizontal: 27,
     fontSize: 40,
     fontWeight: "700",
-    color: "#fff"
+    color: "#fff",
+    fontFamily: 'productSans-Bold'
   },
 
 })
