@@ -30,13 +30,11 @@ class Cards extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <TouchableOpacity onPress={() => this.nextPhoto()}>
-          <ImageBackground style={styles.card} source={{ uri: this.props.image[0].imageurl }} />
-        </TouchableOpacity>
+        <ImageBackground style={styles.card} source={{ uri: this.props.image[0].imageurl }} />
         <View style={styles.cardInfo}>
           <Text
             style={{
-              fontSize: 20,
+              fontSize: 27,
               fontWeight: 'bold',
               fontFamily: 'productSans-Regular',
               color: '#000'
@@ -67,7 +65,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    paddingHorizontal: 20
   },
   card: {
     width: deviceWidth * 0.9,
