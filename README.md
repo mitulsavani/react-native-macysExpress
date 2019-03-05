@@ -1,5 +1,5 @@
 <p align="center">
-<a href="https://github.com/bhaveshc20/macysExpress">
+<a href="https://github.com/mitulsavani/macysExpress.git">
 <img alt="macys" src="https://github.com/mitulsavani/macysExpress/blob/master/macysexpress-logo.png" width="250">
 </a>
 </p>
