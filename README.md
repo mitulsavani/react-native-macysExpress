@@ -4,10 +4,14 @@
 </a>
 </p>
 
+
+### [Demo - Try it on Expo]()
+![DemoExpress](https://github.com/mitulsavani/macysExpress/tree/master/assets/DemoExpress.gif)
+
 ## Getting started
 
 ```
-git clone https://github.com/bhaveshc20/macysExpress.git
+git clone https://github.com/mitulsavani/macysExpress.git
 
 expo start
 
@@ -16,5 +20,5 @@ expo ios
 
 ## Feedback
 
-In case you have any feedback or questions, feel free to open a new issues on this repo or reach out to me [**@bhaveshc20**](https://github.com/bhaveshc20) on Github.
+In case you have any feedback or questions, feel free to open a new issues on this repo or reach out to any of us [**@bhaveshc20**](https://github.com/bhaveshc20) [**@andlai2**](https://github.com/anlai2) [**@mitulsavani**](https://github.com/mitulsavani)  [**@jkhusanov**](https://github.com/jkhusanov) on Github.
 
