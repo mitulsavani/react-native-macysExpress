@@ -6,7 +6,7 @@
 
 
 ### [Demo - Try it on Expo]()
-![DemoExpress](https://github.com/mitulsavani/macysExpress/tree/master/assets/DemoExpress.gif)
+![DemoExpress](https://github.com/mitulsavani/macysExpress/blob/master/assets/DemoExpress.gif)
 
 ## Getting started
 
