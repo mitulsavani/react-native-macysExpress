@@ -5,7 +5,7 @@
 </p>
 
 
-### [Demo - Try it on Expo]()
+### [Demo - Try it on Expo](https://exp.host/@mitulsavani/macysExpress)
 ![DemoExpress](https://github.com/mitulsavani/macysExpress/blob/master/assets/DemoExpress.gif)
 
 ## Getting started
