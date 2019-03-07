@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import {
-  TouchableOpacity,
   ImageBackground,
   View,
   Text,
   StyleSheet,
   Dimensions
 } from 'react-native';
-import { Icon, Rating } from 'react-native-elements';
+import { Rating } from 'react-native-elements';
 
 var deviceWidth = Dimensions.get('window').width;
 var deviceHeight = Dimensions.get('window').height;
@@ -54,7 +53,6 @@ class Cards extends Component {
               <Rating imageSize={20} readonly startingValue={this.props.summary.customerrating} />
             </View>
           ) : null}
-          {/* {this.props.summary.customerrating} */}
         </View>
       </View>
     );

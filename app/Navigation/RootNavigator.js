@@ -1,4 +1,3 @@
-import React from 'react';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import HomeStack from "./HomeStack";
 import SettingsStack from "./SettingsStack";
@@ -13,7 +12,5 @@ const AppNavigator = createStackNavigator({
   initialRouteName: 'SettingsStack',
   headerMode: "none"
 });
-
-
 
 export default createAppContainer(AppNavigator);

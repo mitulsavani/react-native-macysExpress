@@ -1,8 +1,8 @@
 import React from 'react';
-import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
+import { createBottomTabNavigator } from 'react-navigation';
+import { Icon } from 'react-native-elements';
 import HomeScreen from '../Screens/HomeScreen';
 import ProductListStack from './ProductListStack';
-import { Icon } from 'react-native-elements';
 
 const TabNavigator = createBottomTabNavigator(
   {

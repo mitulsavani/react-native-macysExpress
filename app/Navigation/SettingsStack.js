@@ -1,5 +1,4 @@
-import React from 'react';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation';
 import CategoriesScreen from '../Screens/CategoriesScreen';
 import ProductScreen from '../Screens/ProductScreen';
 

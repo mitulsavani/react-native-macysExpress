@@ -1,8 +1,6 @@
 import axios from 'axios';
 import { SAVE_STATION, CLEAR_SAVED_STATIONS, REMOVE_STATION, FETCH_CATEGORIES } from './types';
 
-const CATEGORIES_URL = 'http://api.macys.com/v4/catalog/category';
-
 export const fetchStations = (categoryId, callback) => async dispatch => {
   try {
     let { data } = await axios({

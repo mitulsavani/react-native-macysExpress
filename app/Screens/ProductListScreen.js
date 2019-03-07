@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
-import { Icon, Rating, Button, Header } from 'react-native-elements';
+import { Icon, Rating, Header } from 'react-native-elements';
 import { Linking } from 'expo';
 
 export default class ProductListScreen extends React.Component {
@@ -25,7 +25,7 @@ export default class ProductListScreen extends React.Component {
           <Image
             style={{ width: "100%", height: 250 }}
           source={{uri: data.image[0].imageurl}}
-      />
+          />
           <View style={styles.InfoView}>
             <Text style={styles.productName}>{data.summary.name}</Text>
           {data.summary.customerrating ? (

@@ -1,12 +1,10 @@
 import React from 'react';
 import { Text, View, ScrollView, StyleSheet } from 'react-native';
-import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
-import { Card, ListItem, Button, Icon } from 'react-native-elements';
+import { Card, Button } from 'react-native-elements';
 import { connect } from 'react-redux';
 import { LinearGradient } from 'expo';
 
 import * as actions from '../actions';
-import { processFontFamily } from 'expo-font';
 
 class ListScreen extends React.Component {
   static navigationOptions = {

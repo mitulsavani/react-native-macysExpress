@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import { PERSIST_REHYDRATE } from 'redux-persist/lib/constants';
 import { SAVE_STATION, CLEAR_SAVED_STATIONS, REMOVE_STATION } from '../actions/types';
+
 export default function(state = [], action) {
   switch (action.type) {
     case PERSIST_REHYDRATE:

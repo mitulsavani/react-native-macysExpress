@@ -3,7 +3,6 @@ import {
   Text,
   View,
   ScrollView,
-  Button,
   StyleSheet,
   TouchableOpacity,
   Image,
@@ -11,7 +10,7 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 import { Font, LinearGradient } from 'expo';
-const { width, height } = Dimensions.get('window');
+const { height } = Dimensions.get('window');
 
 import * as actions from '../actions';
 class CategoriesScreen extends React.Component {
@@ -99,7 +98,4 @@ const styles = StyleSheet.create({
 function mapStateToProps({ categories }) {
   return { categories: categories };
 }
-export default connect(
-  mapStateToProps,
-  actions
-)(CategoriesScreen);
+export default connect(mapStateToProps, actions)(CategoriesScreen);

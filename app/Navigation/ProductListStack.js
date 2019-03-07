@@ -1,5 +1,5 @@
 import React from 'react';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation';
 import ProductListScreen from '../Screens/ProductListScreen';
 import ListScreen from '../Screens/ListScreen';
 
@@ -24,9 +24,7 @@ ProductListStack.navigationOptions = ({ navigation }) => {
   if (navigation.state.index > 0) {
     tabBarVisible = false;
   }
-
   return {
     tabBarVisible
   };
 };
-

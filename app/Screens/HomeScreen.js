@@ -3,7 +3,6 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 import { Header, Icon } from 'react-native-elements';
-import SettingStack from '../Navigation/SettingsStack';
 import SwipeCards from 'react-native-swipe-cards';
 import Cards from '../Components/Cards';
 
@@ -135,7 +134,4 @@ const styles = StyleSheet.create({
 function mapStateToProps({ categories }) {
   return { categories: categories };
 }
-export default connect(
-  mapStateToProps,
-  actions
-)(HomeScreen);
+export default connect(mapStateToProps,actions)(HomeScreen);

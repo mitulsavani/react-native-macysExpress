@@ -2,12 +2,9 @@ import React from 'react';
 import {
   Text,
   View,
-  Button,
   StyleSheet,
-  ScrollView,
   Image,
   TouchableOpacity,
-  SafeAreaView,
   FlatList
 } from 'react-native';
 import { Font, LinearGradient } from 'expo';
@@ -91,9 +88,14 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'white'
   },
+  headerStyle: {
+    backgroundColor: '#FFB199',
+    borderBottomWidth: 0, 
+    borderBottomColor: 'transparent',
+    elevation: null
+  },
   plannerOuterContainer: {
     height: 600,
-    // justifyContent: 'center',
     backgroundColor: '#FF0844'
   },
   plannerInnerContainer: {
@@ -107,7 +109,6 @@ const styles = StyleSheet.create({
     marginLeft: 30,
     color: 'white'
   },
-
   nameText: {
     fontFamily: 'segoe',
     color: 'white',
@@ -125,12 +126,10 @@ const styles = StyleSheet.create({
     marginLeft: 30,
     marginTop: 30
   },
-
   buttonContainer: {
     alignItems: 'center',
     justifyContent: 'center'
   },
-
   smallRow: {
     flex: 1,
     flexDirection: 'row',
@@ -139,17 +138,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingVertical: 10
   },
-
   thumbnailImageContainer: {
     padding: 5
   },
-
   thumbnailImage: {
     height: 160,
     width: 160,
     borderRadius: 10
   },
-
   planningButton: {
     marginTop: 50,
     marginLeft: 30
