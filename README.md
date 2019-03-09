@@ -2,7 +2,7 @@
 <a href="https://github.com/mitulsavani/macysExpress.git">
 <img alt="macys" src="https://github.com/mitulsavani/macysExpress/blob/master/macysexpress-logo.png" width="250">
 </a>
-<p>
+<p align="center">
   Shopping made simple
 </p>
 </p>
