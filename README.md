@@ -50,4 +50,4 @@ expo ios
 
 ## Feedback
 
-In case you have any feedback or questions, feel free to open a new issues on this repo or reach out to any of us [**@bhaveshc20**](https://github.com/bhaveshc20) [**@andlai2**](https://github.com/anlai2) [**@mitulsavani**](https://github.com/mitulsavani) [**@jkhusanov**](https://github.com/jkhusanov) on Github.
+In case you have any feedback or questions, feel free to open a new issues on this repo or reach out to any of us [**@bhaveshc20**](https://github.com/bhaveshc20) [**@anlai2**](https://github.com/anlai2) [**@mitulsavani**](https://github.com/mitulsavani) [**@jkhusanov**](https://github.com/jkhusanov) on Github.
