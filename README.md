@@ -7,7 +7,7 @@
 </p>
 </p>
 
-## What can ma express do?
+## What can macysExpress do?
 
 **A personalized product that helps you find and buy clothings based on your preferences**
 
@@ -22,6 +22,8 @@ This app was created at [SF Hacks 2019](https://sfhacks2020.com/). We wanted to 
 
 ![DemoExpress](./assets/DemoExpress.gif)
 ### [Demo - Try it on Expo](https://exp.host/@mitulsavani/macysExpress)
+
+## Screens
 
 |                                                         |                                                         |                                                         |
 | :-----------------------------------------------------: | :-----------------------------------------------------: | :-----------------------------------------------------: |
